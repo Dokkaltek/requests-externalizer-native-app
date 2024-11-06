@@ -15,8 +15,8 @@ fpm -s dir -t deb -p requests-externalizer-linux-arm.deb \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
 ./bin/requests-externalizer-linux-arm=/usr/bin/requests-externalizer \
-./resources/manifest-linux.json=~/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
-./resources/manifest-linux.json=~/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
+./resources/manifest-linux.json=$HOME/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
+./resources/manifest-linux.json=$HOME/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
 
 # Linux ARM64
 fpm -s dir -t deb -p requests-externalizer-linux-arm64.deb \
@@ -29,8 +29,8 @@ fpm -s dir -t deb -p requests-externalizer-linux-arm64.deb \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
 ./bin/requests-externalizer-linux-arm64=/usr/bin/requests-externalizer \
-./resources/manifest-linux.json=~/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
-./resources/manifest-linux.json=~/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
+./resources/manifest-linux.json=$HOME/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
+./resources/manifest-linux.json=$HOME/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
 
 # Linux x64
 fpm -s dir -t deb -p requests-externalizer-linux-x64.deb \
@@ -43,8 +43,8 @@ fpm -s dir -t deb -p requests-externalizer-linux-x64.deb \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
 ./bin/requests-externalizer-linux-x64=/usr/bin/requests-externalizer \
-./resources/manifest-linux.json=~/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
-./resources/manifest-linux.json=~/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
+./resources/manifest-linux.json=$HOME/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
+./resources/manifest-linux.json=$HOME/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
 
 # Linux x86
 fpm -s dir -t deb -p requests-externalizer-linux-x86.deb \
@@ -57,8 +57,8 @@ fpm -s dir -t deb -p requests-externalizer-linux-x86.deb \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
 ./bin/requests-externalizer-linux-x86=/usr/bin/requests-externalizer \
-./resources/manifest-linux.json=~/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
-./resources/manifest-linux.json=~/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
+./resources/manifest-linux.json=$HOME/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
+./resources/manifest-linux.json=$HOME/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
 
 # -----------------------
 # RPM packages for linux
@@ -75,8 +75,8 @@ fpm -s dir -t rpm -p requests-externalizer-linux-arm.rpm \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
 ./bin/requests-externalizer-linux-arm=/usr/bin/requests-externalizer \
-./resources/manifest-linux.json=~/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
-./resources/manifest-linux.json=~/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
+./resources/manifest-linux.json=$HOME/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
+./resources/manifest-linux.json=$HOME/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
 
 # Linux ARM64
 fpm -s dir -t rpm -p requests-externalizer-linux-arm64.rpm \
@@ -89,8 +89,8 @@ fpm -s dir -t rpm -p requests-externalizer-linux-arm64.rpm \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
 ./bin/requests-externalizer-linux-arm64=/usr/bin/requests-externalizer \
-./resources/manifest-linux.json=~/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
-./resources/manifest-linux.json=~/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
+./resources/manifest-linux.json=$HOME/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
+./resources/manifest-linux.json=$HOME/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
 
 # Linux x64
 fpm -s dir -t rpm -p requests-externalizer-linux-x64.rpm \
@@ -103,8 +103,8 @@ fpm -s dir -t rpm -p requests-externalizer-linux-x64.rpm \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
 ./bin/requests-externalizer-linux-x64=/usr/bin/requests-externalizer \
-./resources/manifest-linux.json=~/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
-./resources/manifest-linux.json=~/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
+./resources/manifest-linux.json=$HOME/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
+./resources/manifest-linux.json=$HOME/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
 
 # Linux x86
 fpm -s dir -t rpm -p requests-externalizer-linux-x86.rpm \
@@ -117,5 +117,5 @@ fpm -s dir -t rpm -p requests-externalizer-linux-x86.rpm \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
 ./bin/requests-externalizer-linux-x86=/usr/bin/requests-externalizer \
-./resources/manifest-linux.json=~/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
-./resources/manifest-linux.json=~/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
+./resources/manifest-linux.json=$HOME/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
+./resources/manifest-linux.json=$HOME/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
