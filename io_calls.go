@@ -50,7 +50,7 @@ func (f File) Write(b []byte) (int, error) {
 }
 
 // Close implementation of OSFile Close method
-func (f File) Close() error{
+func (f File) Close() error {
 	return f.file.Close()
 }
 
@@ -70,7 +70,11 @@ func (i IOCalls) OpenFile(name string, flag int, perm os.FileMode) (OSFile, erro
 func (i IOCalls) Stat(name string) (OSFileSize, error) {
 	fileInfo, err := os.Stat(name)
 
-	return FileSize{fileInfo.Size()}, err
+	if fileInfo != nil {
+		return FileSize{fileInfo.Size()}, err
+	}
+
+	return FileSize{0}, err
 }
 
 // Remove implementation of OSCalls Remove method
