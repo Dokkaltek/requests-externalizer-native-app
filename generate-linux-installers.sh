@@ -4,6 +4,11 @@
 # DEB packages for linux
 # -----------------------
 
+chmod +x ./bin/requests-externalizer-linux-arm
+chmod +x ./bin/requests-externalizer-linux-arm64
+chmod +x ./bin/requests-externalizer-linux-x64
+chmod +x ./bin/requests-externalizer-linux-x86
+
 # Linux ARM
 fpm -s dir -t deb -p ./installers/requests-externalizer-linux-arm-chrome.deb \
 --name requests-externalizer-native-app \
@@ -14,6 +19,7 @@ fpm -s dir -t deb -p ./installers/requests-externalizer-linux-arm-chrome.deb \
 --description "The native application for requests externalizer browser extension" \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
+--deb-no-default-config-files \
 ./bin/requests-externalizer-linux-arm=/usr/bin/requests-externalizer \
 ./resources/manifest-linux.json=/etc/opt/chrome/native-messaging-hosts/es.requests.externalizer.json
 
@@ -26,6 +32,7 @@ fpm -s dir -t deb -p ./installers/requests-externalizer-linux-arm-chromium.deb \
 --description "The native application for requests externalizer browser extension" \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
+--deb-no-default-config-files \
 ./bin/requests-externalizer-linux-arm=/usr/bin/requests-externalizer \
 ./resources/manifest-linux.json=/etc/chromium/native-messaging-hosts/es.requests.externalizer.json
 
@@ -39,6 +46,7 @@ fpm -s dir -t deb -p ./installers/requests-externalizer-linux-arm64-chrome.deb \
 --description "The native application for requests externalizer browser extension" \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
+--deb-no-default-config-files \
 ./bin/requests-externalizer-linux-arm64=/usr/bin/requests-externalizer \
 ./resources/manifest-linux.json=/etc/opt/chrome/native-messaging-hosts/es.requests.externalizer.json
 
@@ -51,6 +59,7 @@ fpm -s dir -t deb -p ./installers/requests-externalizer-linux-arm64-chromium.deb
 --description "The native application for requests externalizer browser extension" \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
+--deb-no-default-config-files \
 ./bin/requests-externalizer-linux-arm64=/usr/bin/requests-externalizer \
 ./resources/manifest-linux.json=/etc/chromium/native-messaging-hosts/es.requests.externalizer.json
 
@@ -64,6 +73,7 @@ fpm -s dir -t deb -p ./installers/requests-externalizer-linux-x64-chrome.deb \
 --description "The native application for requests externalizer browser extension" \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
+--deb-no-default-config-files \
 ./bin/requests-externalizer-linux-x64=/usr/bin/requests-externalizer \
 ./resources/manifest-linux.json=/etc/opt/chrome/native-messaging-hosts/es.requests.externalizer.json
 
@@ -76,6 +86,7 @@ fpm -s dir -t deb -p ./installers/requests-externalizer-linux-x64-chromium.deb \
 --description "The native application for requests externalizer browser extension" \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
+--deb-no-default-config-files \
 ./bin/requests-externalizer-linux-x64=/usr/bin/requests-externalizer \
 ./resources/manifest-linux.json=/etc/chromium/native-messaging-hosts/es.requests.externalizer.json
 
@@ -89,6 +100,7 @@ fpm -s dir -t deb -p ./installers/requests-externalizer-linux-x86-chrome.deb \
 --description "The native application for requests externalizer browser extension" \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
+--deb-no-default-config-files \
 ./bin/requests-externalizer-linux-x86=/usr/bin/requests-externalizer \
 ./resources/manifest-linux.json=/etc/opt/chrome/native-messaging-hosts/es.requests.externalizer.json
 
@@ -101,6 +113,7 @@ fpm -s dir -t deb -p ./installers/requests-externalizer-linux-x86-chromium.deb \
 --description "The native application for requests externalizer browser extension" \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
+--deb-no-default-config-files \
 ./bin/requests-externalizer-linux-x86=/usr/bin/requests-externalizer \
 ./resources/manifest-linux.json=/etc/chromium/native-messaging-hosts/es.requests.externalizer.json
 
