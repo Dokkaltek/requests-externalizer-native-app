@@ -10,6 +10,7 @@ type OSCalls interface {
 	OpenFile(name string, flag int, perm os.FileMode) (OSFile, error)
 	Stat(name string) (OSFileSize, error)
 	Remove(name string) error
+	MkdirAll(path string, perm os.FileMode) error
 	RunCommand(cmd []string) error
 }
 
@@ -73,13 +74,17 @@ func (i IOCalls) Stat(name string) (OSFileSize, error) {
 	if fileInfo != nil {
 		return FileSize{fileInfo.Size()}, err
 	}
-
 	return FileSize{0}, err
 }
 
 // Remove implementation of OSCalls Remove method
 func (i IOCalls) Remove(name string) error {
 	return os.Remove(name)
+}
+
+// MkdirAll implementation of OSCalls MkdirAll method
+func (i IOCalls) MkdirAll(path string, perm os.FileMode) error {
+	return os.MkdirAll(path, perm)
 }
 
 // RunCommand implementation of OSCalls RunCommand method

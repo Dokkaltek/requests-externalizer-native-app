@@ -57,6 +57,12 @@ func Init(ioCalls OSCalls) {
 		log.Fatal("Couldn't find user cache folder.", err)
 	}
 
+	err = ioCalls.MkdirAll(cacheDir, 0750)
+
+	if err != nil {
+		log.Print("Couldn't create log holder folder.", err)
+	}
+
 	logPath := path.Join(cacheDir, "requests-externalizer-native-host-log.log")
 
 	// Make sure that the log doesn't increase too much in size
@@ -81,7 +87,6 @@ func main() {
 	Init(IOCalls{})
 }
 
-
 // read creates a new buffered I/O reader and reads messages from Stdin.
 func read(ioCalls OSCalls) {
 	s := bufio.NewReaderSize(os.Stdin, bufferSize)
@@ -99,7 +104,7 @@ func read(ioCalls OSCalls) {
 		// If message length exceeds size of buffer, the message will be truncated.
 		// This will likely cause an error when we attempt to unmarshal message to JSON.
 		if lengthNum > bufferSize {
-			Error.Printf("Message size of %d exceeds buffer size of %d. " +
+			Error.Printf("Message size of %d exceeds buffer size of %d. "+
 				"Message will be truncated and is unlikely to unmarshal to JSON.", lengthNum, bufferSize)
 		}
 

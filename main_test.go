@@ -8,9 +8,9 @@ import (
 )
 
 type MockFile struct {
-	data []byte
-	readIndex int64
-	expectedErr  error
+	data        []byte
+	readIndex   int64
+	expectedErr error
 }
 
 type MockFileSize struct {
@@ -43,6 +43,9 @@ func TestMainHealthCheck(t *testing.T) {
 	mockStdin, oldStdin := mockStdin(testInputCmd)
 	defer cleanStdinMock(mockStdin, oldStdin)
 
+	// Mock MkdirAll
+	m.EXPECT().MkdirAll(gomock.Any(), gomock.Any()).Return(nil)
+
 	// Mock OpenFile
 	m.EXPECT().OpenFile(gomock.Any(), gomock.Eq(os.O_APPEND|os.O_CREATE|os.O_WRONLY),
 		gomock.Any()).Return(MockFile{}, nil)
@@ -66,6 +69,9 @@ func TestMainCommandRun(t *testing.T) {
 
 	mockStdin, oldStdin := mockStdin(testInputCmd)
 	defer cleanStdinMock(mockStdin, oldStdin)
+
+	// Mock MkdirAll
+	m.EXPECT().MkdirAll(gomock.Any(), gomock.Any()).Return(nil)
 
 	// Mock OpenFile
 	m.EXPECT().OpenFile(gomock.Any(), gomock.Eq(os.O_APPEND|os.O_CREATE|os.O_WRONLY),

@@ -34,6 +34,20 @@ func (m *MockOSCalls) EXPECT() *MockOSCallsMockRecorder {
 	return m.recorder
 }
 
+// MkdirAll mocks base method.
+func (m *MockOSCalls) MkdirAll(path string, perm os.FileMode) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "MkdirAll", path, perm)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// MkdirAll indicates an expected call of MkdirAll.
+func (mr *MockOSCallsMockRecorder) MkdirAll(path, perm interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "MkdirAll", reflect.TypeOf((*MockOSCalls)(nil).MkdirAll), path, perm)
+}
+
 // OpenFile mocks base method.
 func (m *MockOSCalls) OpenFile(name string, flag int, perm os.FileMode) (OSFile, error) {
 	m.ctrl.T.Helper()
