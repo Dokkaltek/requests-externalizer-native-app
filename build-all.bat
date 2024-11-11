@@ -29,3 +29,7 @@ go build -o ./bin/requests-externalizer-linux-arm64
 
 set GOOS=darwin
 go build -o ./bin/requests-externalizer-mac-arm64
+
+set GOARCH=arm
+set GOOS=linux
+go build -o ./bin/requests-externalizer-linux-arm
