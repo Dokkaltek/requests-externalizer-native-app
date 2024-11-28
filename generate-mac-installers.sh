@@ -14,9 +14,9 @@ fpm -s dir -t osxpkg -p requests-externalizer-mac-arm64.pkg \
 --description "The native application for requests externalizer browser extension" \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
-./bin/requests-externalizer-linux-arm64=/usr/bin/requests-externalizer \
-./resources/manifest-linux.json=~/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
-./resources/manifest-linux.json=~/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
+./bin/requests-externalizer-mac-arm64=/Library/requests-externalizer/requests-externalizer \
+./resources/manifest-mac.json=/Library/Google/Chrome/NativeMessagingHosts/es.requests.externalizer.json \
+./resources/manifest-mac.json="/Library/Application Support/Chromium/NativeMessagingHosts/es.requests.externalizer.json"
 
 # Mac x64
 fpm -s dir -t osxpkg -p requests-externalizer-mac-x64.pkg \
@@ -28,6 +28,6 @@ fpm -s dir -t osxpkg -p requests-externalizer-mac-x64.pkg \
 --description "The native application for requests externalizer browser extension" \
 --url "https://github.com/Dokkaltek/requests-externalizer-native-app" \
 --maintainer "Dokkaltek" \
-./bin/requests-externalizer-linux-x64=/usr/bin/requests-externalizer \
-./resources/manifest-linux.json=~/.config/google-chrome/NativeMessagingHosts/es.requests.externalizer.json \
-./resources/manifest-linux.json=~/.config/chromium/NativeMessagingHosts/es.requests.externalizer.json
+./bin/requests-externalizer-mac-x64=/Library/requests-externalizer/requests-externalizer \
+./resources/manifest-mac.json=/Library/Google/Chrome/NativeMessagingHosts/es.requests.externalizer.json \
+./resources/manifest-mac.json="/Library/Application Support/Chromium/NativeMessagingHosts/es.requests.externalizer.json"

@@ -1,7 +1,7 @@
 {
     "name": "es.requests.externalizer",
     "description": "Requests externalizer native app",
-    "path": "~/Library/requests-externalizer/requests-externalizer",
+    "path": "/Library/requests-externalizer/requests-externalizer",
     "type": "stdio",
     "allowed_origins": ["chrome-extension://jchbbljfgiblghliggjhcbolcncikaoj/"]
 }  
