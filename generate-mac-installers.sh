@@ -16,7 +16,9 @@ fpm -s dir -t osxpkg -p requests-externalizer-mac-arm64.pkg \
 --maintainer "Dokkaltek" \
 ./bin/requests-externalizer-mac-arm64=/Library/requests-externalizer/requests-externalizer \
 ./resources/manifest-mac.json=/Library/Google/Chrome/NativeMessagingHosts/es.requests.externalizer.json \
-./resources/manifest-mac.json="/Library/Application Support/Chromium/NativeMessagingHosts/es.requests.externalizer.json"
+./resources/manifest-mac.json="/Library/Application Support/Chromium/NativeMessagingHosts/es.requests.externalizer.json" \
+./resources/manifest-mac.json="/Library/Application Support/Mozilla/NativeMessagingHosts/es.requests.externalizer.json"
+
 
 # Mac x64
 fpm -s dir -t osxpkg -p requests-externalizer-mac-x64.pkg \
@@ -30,4 +32,5 @@ fpm -s dir -t osxpkg -p requests-externalizer-mac-x64.pkg \
 --maintainer "Dokkaltek" \
 ./bin/requests-externalizer-mac-x64=/Library/requests-externalizer/requests-externalizer \
 ./resources/manifest-mac.json=/Library/Google/Chrome/NativeMessagingHosts/es.requests.externalizer.json \
-./resources/manifest-mac.json="/Library/Application Support/Chromium/NativeMessagingHosts/es.requests.externalizer.json"
+./resources/manifest-mac.json="/Library/Application Support/Chromium/NativeMessagingHosts/es.requests.externalizer.json" \
+./resources/manifest-mac.json="/Library/Application Support/Mozilla/NativeMessagingHosts/es.requests.externalizer.json"

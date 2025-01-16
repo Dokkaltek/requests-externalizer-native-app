@@ -1,0 +1,7 @@
+{
+    "name": "es.requests.externalizer",
+    "description": "Requests externalizer native app",
+    "path": "/usr/bin/requests-externalizer",
+    "type": "stdio",
+    "allowed_extensions": ["requests-externalizer@dokkaltek.es"]
+}  

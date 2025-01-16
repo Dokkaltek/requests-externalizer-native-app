@@ -46,6 +46,7 @@ Source: ".\bin\requests-externalizer-x86.exe"; DestDir: "{app}"; DestName: "requ
 
 [Registry]
 Root: HKA; Subkey: "SOFTWARE\Google\Chrome\NativeMessagingHosts\es.requests.externalizer"; ValueType: string; ValueData: "{localappdata}\Requests-externalizer\config\manifest.json"; Flags: uninsdeletekey
+Root: HKA; Subkey: "SOFTWARE\Mozilla\NativeMessagingHosts\es.requests.externalizer"; ValueType: string; ValueData: "{localappdata}\Requests-externalizer\config\firefox-manifest.json"; Flags: uninsdeletekey
 
 [Icons]
 Name: "{group}\Request externalizer"; Filename: "{app}\requests-externalizer.exe"
@@ -69,16 +70,27 @@ end;
 procedure InstallManifest();
 var
   AppPath : String;
+  CommonManifestStart : String;
+  ChromeExtOrigin : String;
+  FirefoxExtOrigin : String;
+  ManifestEnding : String;
 begin
   AppPath := ExpandConstant('{app}');
   StringChangeEx(AppPath, '\', '\\', True);
-  SaveStringToFile(ExpandConstant('{localappdata}') + '\Requests-externalizer\config\manifest.json', 
-  '{' + #13#10 +
+  CommonManifestStart := '{' + #13#10 +
     '"name": "es.requests.externalizer",' + #13#10 +
     '"description": "Requests externalizer native app",' + #13#10 +
     '"path": "' + AppPath + '\\requests-externalizer.exe",' + #13#10 +
-    '"type": "stdio",' + #13#10 +
-    '"allowed_origins": ["chrome-extension://jchbbljfgiblghliggjhcbolcncikaoj/"]' + #13#10 +
-  '}'
-  , False);
+    '"type": "stdio",' + #13#10;
+  ChromeExtOrigin := '"allowed_origins": ["chrome-extension://jchbbljfgiblghliggjhcbolcncikaoj/"]' + #13#10;
+  FirefoxExtOrigin := '"allowed_extensions": ["requests-externalizer@dokkaltek.es"]' + #13#10;
+  ManifestEnding := '}';
+  
+  // Save the chrome manifest
+  SaveStringToFile(ExpandConstant('{localappdata}') + '\Requests-externalizer\config\manifest.json', 
+  CommonManifestStart + ChromeExtOrigin + ManifestEnding, False);
+  
+  // Save the firefox manifest
+  SaveStringToFile(ExpandConstant('{localappdata}') + '\Requests-externalizer\config\firefox-manifest.json', 
+  CommonManifestStart + FirefoxExtOrigin + ManifestEnding, False);
 end;
