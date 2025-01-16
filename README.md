@@ -16,6 +16,8 @@ file in the root folder of this project.
 You can just execute any of the installers in the [releases](https://github.com/Dokkaltek/requests-externalizer-native-app/releases) page.
 For windows it auto-detects your architecture, so you don't need to worry about it (64 bits, 32bits and arm64 supported).
 
+The installers were created using GO compiler for the main binary, Innosetup for windows installer, and [FPM packager](https://fpm.readthedocs.io) for linux and mac deb and rpm installers.
+
 ### Installation for non supported systems
 
 For any other one system that isn't in the releases page you can install things manually compiling the executable using [GO](https://go.dev/).
@@ -57,9 +59,19 @@ The content of the manifest.json file should be something like this:
 }
 ```
 
-You can find the location of where you have to place this file [here](
-https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging?#native-messaging-host-location
-)
+If you want to install on a firefox-based browser you have to change the `allowed_origins` by `allowed_extensions`:
+
+``` JSON
+{
+    "name": "es.requests.externalizer",
+    "description": "Requests externalizer native app",
+    "path": "<wherever-the-path-of-where-you-placed-the-executable-is>",
+    "type": "stdio",
+    "allowed_extensions": ["requests-externalizer@dokkaltek.es"]
+}  
+```
+
+You can find the location of where you have to place this file [here for chrome/chromium](https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging?#native-messaging-host-location) or [here for firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#manifest_location).
 
 ## FAQ
 
