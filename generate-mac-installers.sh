@@ -5,7 +5,7 @@
 # -----------------------
 
 # Mac ARM64
-fpm -s dir -t osxpkg -p requests-externalizer-mac-arm64.pkg \
+fpm -s dir -t osxpkg -p ./installers/requests-externalizer-mac-arm64.pkg \
 --name requests-externalizer-native-app \
 --license gpl3 \
 --version 1.0.0 \
@@ -21,7 +21,7 @@ fpm -s dir -t osxpkg -p requests-externalizer-mac-arm64.pkg \
 
 
 # Mac x64
-fpm -s dir -t osxpkg -p requests-externalizer-mac-x64.pkg \
+fpm -s dir -t osxpkg -p ./installers/requests-externalizer-mac-x64.pkg \
 --name requests-externalizer-native-app \
 --license gpl3 \
 --version 1.0.0 \
