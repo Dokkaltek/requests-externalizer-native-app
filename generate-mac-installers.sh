@@ -4,6 +4,9 @@
 # DEB packages for mac
 # -----------------------
 
+chmod +x ./bin/requests-externalizer-mac-arm64
+chmod +x ./bin/requests-externalizer-mac-x64
+
 # Mac ARM64
 fpm -s dir -t osxpkg -p ./installers/requests-externalizer-mac-arm64.pkg \
 --name requests-externalizer-native-app \
@@ -18,7 +21,6 @@ fpm -s dir -t osxpkg -p ./installers/requests-externalizer-mac-arm64.pkg \
 ./resources/manifest-mac.json=/Library/Google/Chrome/NativeMessagingHosts/es.requests.externalizer.json \
 ./resources/manifest-mac.json="/Library/Application Support/Chromium/NativeMessagingHosts/es.requests.externalizer.json" \
 ./resources/manifest-mac.json="/Library/Application Support/Mozilla/NativeMessagingHosts/es.requests.externalizer.json"
-
 
 # Mac x64
 fpm -s dir -t osxpkg -p ./installers/requests-externalizer-mac-x64.pkg \
