@@ -82,7 +82,7 @@ begin
     '"description": "Requests externalizer native app",' + #13#10 +
     '"path": "' + AppPath + '\\requests-externalizer.exe",' + #13#10 +
     '"type": "stdio",' + #13#10;
-  ChromeExtOrigin := '"allowed_origins": ["chrome-extension://jchbbljfgiblghliggjhcbolcncikaoj/"]' + #13#10;
+  ChromeExtOrigin := '"allowed_origins": ["chrome-extension://cleklecjnonjaggdaljfjhgfapphjjig/"]' + #13#10;
   FirefoxExtOrigin := '"allowed_extensions": ["requests-externalizer@dokkaltek.es"]' + #13#10;
   ManifestEnding := '}';
   

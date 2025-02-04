@@ -3,5 +3,5 @@
     "description": "Requests externalizer native app",
     "path": "/usr/bin/requests-externalizer",
     "type": "stdio",
-    "allowed_origins": ["chrome-extension://jchbbljfgiblghliggjhcbolcncikaoj/"]
+    "allowed_origins": ["chrome-extension://cleklecjnonjaggdaljfjhgfapphjjig/"]
 }  
