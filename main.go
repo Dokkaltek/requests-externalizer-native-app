@@ -159,10 +159,11 @@ func executeCommand(command string, ioCalls OSCalls) {
 	re := regexp.MustCompile(`(?m)["'].*?["']|\S.\S*`)
 	commandArgs := re.FindAllString(command, -1)
 
-	commandArgs[0] = strings.ReplaceAll(commandArgs[0], "\"", "'")
+	commandArgs[0] = strings.ReplaceAll(commandArgs[0], "\"", "")
 	commandArgs[0] = strings.ReplaceAll(commandArgs[0], "'", "")
 
-	Trace.Printf("Executing command '%s' with args: %s", commandArgs[0], commandArgs[1:])
+	Trace.Printf("Executing command '%s' with args: [%s]", commandArgs[0],
+		strings.Join(commandArgs[1:], ", "))
 
 	// Execute all commands from cmd on windows for better support of batch files
 	err := ioCalls.RunCommand(commandArgs)

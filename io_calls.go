@@ -3,6 +3,9 @@ package main
 import (
 	"os"
 	"os/exec"
+	"runtime"
+	"strings"
+	"syscall"
 )
 
 // OSCalls is an interface used to do IO operations at the OS level
@@ -89,6 +92,16 @@ func (i IOCalls) MkdirAll(path string, perm os.FileMode) error {
 
 // RunCommand implementation of OSCalls RunCommand method
 func (i IOCalls) RunCommand(commandArgs []string) error {
-	cmd := exec.Command(commandArgs[0], commandArgs[1:]...)
+	var cmd *exec.Cmd
+
+	if runtime.GOOS == "windows" && len(commandArgs) > 2 {
+		cmd = exec.Command(commandArgs[0])
+		cmd.SysProcAttr = &syscall.SysProcAttr{
+			CmdLine: strings.Join(commandArgs[1:], " "),
+		}
+	} else {
+		cmd = exec.Command(commandArgs[0], commandArgs[1:]...)
+	}
+
 	return cmd.Run()
 }

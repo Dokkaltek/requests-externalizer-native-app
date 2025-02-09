@@ -6,7 +6,7 @@
 
 [Setup]
 AppName=Requests externalizer
-AppVersion=1.0
+AppVersion=1.0.0
 WizardStyle=modern
 DefaultDirName={autocf}\Requests-externalizer
 DefaultGroupName=Requests externalizer
@@ -16,7 +16,7 @@ Compression=lzma2
 SolidCompression=yes
 OutputDir=.\installers
 WizardSmallImageFile=.\winres\icon128.bmp
-OutputBaseFilename=Requests-externalizer-installer
+OutputBaseFilename=Requests-externalizer-installer-windows-all
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 ; "ArchitecturesInstallIn64BitMode=x64compatible or arm64" instructs
@@ -85,6 +85,10 @@ begin
   ChromeExtOrigin := '"allowed_origins": ["chrome-extension://cleklecjnonjaggdaljfjhgfapphjjig/"]' + #13#10;
   FirefoxExtOrigin := '"allowed_extensions": ["requests-externalizer@dokkaltek.es"]' + #13#10;
   ManifestEnding := '}';
+  
+
+  // Make sure config directories exist
+  ForceDirectories(ExpandConstant('{localappdata}') + '\Requests-externalizer\config\');
   
   // Save the chrome manifest
   SaveStringToFile(ExpandConstant('{localappdata}') + '\Requests-externalizer\config\manifest.json', 
