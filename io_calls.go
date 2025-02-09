@@ -97,7 +97,8 @@ func (i IOCalls) RunCommand(commandArgs []string) error {
 	if runtime.GOOS == "windows" && len(commandArgs) > 2 {
 		cmd = exec.Command(commandArgs[0])
 		cmd.SysProcAttr = &syscall.SysProcAttr{
-			CmdLine: strings.Join(commandArgs[1:], " "),
+			CreationFlags: syscall.CREATE_NEW_PROCESS_GROUP,
+			CmdLine:       strings.Join(commandArgs[1:], " "),
 		}
 	} else {
 		cmd = exec.Command(commandArgs[0], commandArgs[1:]...)
